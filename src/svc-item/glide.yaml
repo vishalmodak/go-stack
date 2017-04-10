@@ -1,0 +1,9 @@
+package: svc-item
+import:
+- package: github.com/go-zoo/bone
+  version: ^1.2.0
+- package: svc-item
+  subpackages:
+  - routes
+  - health
+  - item

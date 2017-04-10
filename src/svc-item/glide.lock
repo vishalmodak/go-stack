@@ -1,0 +1,6 @@
+hash: 78a06735a7c8b3e8d4e44ae4687b73bf5aec6781105d7b3923597482f3f0a943
+updated: 2017-04-09T21:51:14.907132877-05:00
+imports:
+- name: github.com/go-zoo/bone
+  version: fd0aebc74e908868b09ac140fb5a53cb363884c1
+testImports: []
