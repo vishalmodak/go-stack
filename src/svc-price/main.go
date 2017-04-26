@@ -35,5 +35,5 @@ func main() {
 
 		c.JSON(http.StatusOK, itemPrice)
 	})
-	router.Run(":8080")
+	router.Run(":10002")
 }

@@ -13,7 +13,7 @@ import (
 
 func main() {
 	var serverPort string
-	flag.StringVar(&serverPort, "port", ":8080", "HTTP port")
+	flag.StringVar(&serverPort, "port", ":10001", "HTTP port")
 	flag.Parse()
 	if !strings.HasPrefix(serverPort, ":") {
 		serverPort = ":" + serverPort

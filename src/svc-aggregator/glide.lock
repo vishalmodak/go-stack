@@ -1,0 +1,16 @@
+hash: b703af15c88020b843c51455b58c9101901647944e0904f84ffdcd4879d6f62c
+updated: 2017-04-23T00:09:49.471765594-05:00
+imports:
+- name: github.com/pressly/chi
+  version: e6033ea75479391a4bce3918fc119cad31e1cb30
+  subpackages:
+  - middleware
+- name: github.com/pressly/lg
+  version: 9f88ccf6568751e6ea32bce38d01a43af4cbb166
+- name: github.com/Sirupsen/logrus
+  version: 10f801ebc38b33738c9d17d50860f484a0988ff5
+- name: golang.org/x/sys
+  version: afadfcc7779c1f4db0f6f6438afcb108d9c9c7cd
+  subpackages:
+  - unix
+testImports: []
