@@ -1,4 +1,4 @@
-package: svc-aggregator
+package: svc-aggregator 
 import:
 - package: github.com/pressly/chi
   version: ^2.1.0

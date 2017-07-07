@@ -8,14 +8,19 @@ import (
 
 func main() {
 	router := gin.Default()
+
+	// Global middleware
+	router.Use(gin.Logger())
+	router.Use(gin.Recovery())
+
 	router.GET("/health", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"status": "ok"})
 	})
 	router.GET("/price/item/:id", func(c *gin.Context) {
-		itemId := c.Param("id")
+		itemID := c.Param("id")
 
 		itemPrice := Price {
-			ItemId: itemId,
+			ItemId: itemID,
 			LastUpdate: time.Now(),
 			ListPrice : ListPrice {
 				MinPrice: 5.1,

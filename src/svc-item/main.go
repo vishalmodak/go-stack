@@ -22,6 +22,6 @@ func main() {
 	mux := bone.New()
 	routes.Build(mux)
 
-	log.Printf("svc-item is listening on %s...", serverPort)
+	log.Printf("svc-item started sucessfully on port %s ....", serverPort)
 	log.Fatal(http.ListenAndServe(serverPort, mux))
 }

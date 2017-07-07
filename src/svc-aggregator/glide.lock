@@ -1,8 +1,36 @@
 hash: b703af15c88020b843c51455b58c9101901647944e0904f84ffdcd4879d6f62c
-updated: 2017-04-29T17:33:03.953699897-05:00
+updated: 2017-05-06T21:35:13.178441433-05:00
 imports:
+- name: github.com/go-kit/kit
+  version: 3df66f47685c422e76fe68829732773dcfb9c55d
+  subpackages:
+  - endpoint
+  - log
+  - sd
+  - sd/cache
+  - sd/consul
+- name: github.com/go-logfmt/logfmt
+  version: 390ab7935ee28ec6b286364bba9b4dd6410cb3d5
 - name: github.com/go-resty/resty
-  version: d2d648a0b7d7162b7a61fae90e63a1c4a9a60601
+  version: 2b803d0e2dba5406a9ab6683deb9504a72338db1
+- name: github.com/go-stack/stack
+  version: 7a2f19628aabfe68f0766b59e74d6315f8347d22
+- name: github.com/hashicorp/consul
+  version: a212bf55fe687d417ff4d7059100d2936db4333d
+  subpackages:
+  - api
+- name: github.com/hashicorp/go-cleanhttp
+  version: 3573b8b52aa7b37b9358d966a898feb387f62437
+- name: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
+- name: github.com/hashicorp/serf
+  version: 65c2babe73c7a096cd24e9eeec67613eb4e436c9
+  subpackages:
+  - coordinate
+- name: github.com/kr/logfmt
+  version: b84e30acd515aadc4b783ad4ff83aff3299bdfe0
+- name: github.com/mitchellh/go-homedir
+  version: b8bc1bf767474819792c23f32d8286a45736f1c6
 - name: github.com/pressly/chi
   version: e6033ea75479391a4bce3918fc119cad31e1cb30
   subpackages:

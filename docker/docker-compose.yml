@@ -1,0 +1,31 @@
+version: "2"
+services:
+  svc-aggregator:
+    build:
+      context: ../src/svc-aggregator
+    image: go-svc-aggregator
+    container_name: item-aggregator
+    networks:
+      - docker_item
+    ports:
+      - 10000:10000
+
+  svc-item:
+    build:
+      context: ../src/svc-item
+    image: go-svc-item
+    container_name: item-details
+    networks:
+      - docker_item
+    ports:
+      - 10001:10001
+
+  svc-price:
+    build:
+      context: ../src/svc-price
+    image: go-svc-price
+    container_name: item-price
+    networks:
+      - docker_item
+    ports:
+      - 10002:10002
