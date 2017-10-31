@@ -1,0 +1,21 @@
+{
+  "name" : "item",
+  "active" : true,
+  "proxy" : {
+    "preserve_host" : false,
+    "listen_path" : "/item/*",
+    "upstreams" : {
+      "balancing": "roundrobin",
+      "targets": [
+        {"target": "http://svc-item:10001/"}
+      ]
+    },
+    "strip_path" : false,
+    "append_path" : true,
+    "methods" : ["GET"]
+  },
+  "health_check": {
+    "url": "http://svc-item:10001/health",
+    "timeout": 3
+  }
+}

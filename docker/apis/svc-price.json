@@ -1,0 +1,21 @@
+{
+  "name" : "price",
+  "active" : true,
+  "proxy" : {
+    "preserve_host" : false,
+    "listen_path" : "/price/*",
+    "upstreams" : {
+      "balancing": "roundrobin",
+      "targets": [
+        {"target": "http://svc-price:10002/"}
+      ]
+    },
+    "strip_path" : false,
+    "append_path" : true,
+    "methods" : ["GET"]
+  },
+  "health_check": {
+    "url": "http://svc-price:10002/health",
+    "timeout": 3
+  }
+}
