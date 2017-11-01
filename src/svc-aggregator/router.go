@@ -7,6 +7,7 @@ import (
 	"github.com/pressly/chi/middleware"
 	"net/http"
 	"time"
+	"fmt"
 )
 
 type Status struct {
@@ -51,6 +52,15 @@ func Router() chi.Router {
 			r.Get("/", getShoppingInfoAsync)
 		})
 	})
+
+	routes := r.Routes()
+	for i := 0; i < len(routes); i++ {
+		fmt.Printf("%s\n", routes[i].Pattern)
+		subRoutes := routes[i].SubRoutes.Routes()
+		for j := 0; j < len(subRoutes); j++ {
+			fmt.Println("%s\n", subRoutes[j].Pattern)
+		}
+	}
 
 	return r
 }

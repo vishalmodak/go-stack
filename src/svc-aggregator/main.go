@@ -41,16 +41,6 @@ func main() {
 		client = consulsd.NewClient(consulClient)
 	}
 
-	r := Router()
-
-	routes := r.Routes()
-	for i := 0; i < len(routes); i++ {
-		fmt.Printf("%s\n", routes[i].Pattern)
-		subRoutes := routes[i].SubRoutes.Routes()
-		for j := 0; j < len(subRoutes); j++ {
-			fmt.Println("%s\n", subRoutes[j].Pattern)
-		}
-	}
 
 	{
 		var (
@@ -61,14 +51,14 @@ func main() {
 		)
 		{
 			factory := stringsvcFactory(ctx, "GET", "/shopping/sync")
-			subscriber := consulsd.NewSubscriber(client, factory, logger, "stringsvc", tags, passingOnly)
+			subscriber := consulsd.NewSubscriber(client, factory, logger, "sync", tags, passingOnly)
 			balancer := lb.NewRoundRobin(subscriber)
 			retry := lb.Retry(*retryMax, *retryTimeout, balancer)
 			uppercase = retry
 		}
 		{
 			factory := stringsvcFactory(ctx, "GET", "/shopping/async")
-			subscriber := consulsd.NewSubscriber(client, factory, logger, "stringsvc", tags, passingOnly)
+			subscriber := consulsd.NewSubscriber(client, factory, logger, "async", tags, passingOnly)
 			balancer := lb.NewRoundRobin(subscriber)
 			retry := lb.Retry(*retryMax, *retryTimeout, balancer)
 			count = retry
