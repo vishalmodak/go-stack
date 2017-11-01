@@ -9,6 +9,6 @@ ADD . $appDir
 
 RUN go build .
 
-ENTRYPOINT ["/go/src/svc-aggregator/svc-item"]
+CMD ["/go/src/svc-item/svc-item"]
 
 EXPOSE 10001

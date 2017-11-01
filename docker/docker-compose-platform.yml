@@ -1,6 +1,6 @@
 version: "2"
 networks:
-  hotel:
+  item:
 
 services:
   consul:
