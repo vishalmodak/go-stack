@@ -3,3 +3,6 @@
 **/vendor
 **/.glide
 **/.idea
+
+src/github.com
+src/gopkg.in
